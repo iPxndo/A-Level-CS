@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] jediCouncil = {"Yoda","Even Piell","Saesee Tiin","Mace Windu","Plo Koon","Oppo Rancisis","Ki Adi Mundi"};
+		
+		foreach (string jediType in jediCouncil) 
+		{
+			Console.WriteLine(jediType);
+		}
+			
+		
+	}
+}
