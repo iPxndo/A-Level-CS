@@ -1,0 +1,66 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Declare Variables
+		double num1 = 0;
+		double num2 = 0;
+		string op = "0";
+		
+		//Input Operator
+		Console.Write("+ - * /: ");
+		op = Console.ReadLine();
+		
+		//Line Break
+		Console.WriteLine("\n");
+		
+		//Input Number 1
+		Console.Write("Enter Number 1: ");
+		num1 = Convert.ToDouble(Console.ReadLine());
+		
+		//Line Break
+		Console.WriteLine("\n");
+		
+		//Input Number 2
+		Console.Write("Enter Number 2: ");
+		num2 = Convert.ToDouble(Console.ReadLine());
+		
+		//Line Break
+		Console.WriteLine("\n");		
+		//Add
+		if (op == "+")
+		{
+			double ans = num1 + num2;
+			Console.WriteLine($"{num1} + {num2} = {ans}");
+		}
+		
+		//Subtract
+		else if (op == "-")
+		{
+			double ans = num1 - num2;
+			Console.WriteLine($"{num1} - {num2} = {ans}");
+		}
+		
+		//Multiply
+		else if (op == "*")
+		{
+			double ans = num1 * num2;
+			Console.WriteLine($"{num1} * {num2} = {ans}");
+		}
+		
+		//Divide
+		else if (op == "/")
+		{
+			double ans = num1 / num2;
+			Console.WriteLine($"{num1} / {num2} = {ans}");
+		}
+		
+		//Invalid Operator
+		else
+		{
+			Console.WriteLine($"{op} is not a valid input!");
+		}
+	}
+}
