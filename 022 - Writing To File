@@ -1,0 +1,39 @@
+using System;
+using System.IO;
+
+public class Program 
+{ 
+	public static void Main() 
+	{ 
+		/* Create File */
+		string filePath = "dontLookBackInAnger.txt"; 
+
+		string[] lyrics = {"Slip inside the eye of your mind", "Don't you know you might find", "A better place to play", "You said that you've never been", "But all the things that you've seen", "Will slowly fade away"};
+
+		/* Write File */
+		FileStream filestream1 = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+		using(StreamWriter streamWriter = new StreamWriter(filestream1))
+		{
+			for(int counter = 0; counter < lyrics.Length; counter++)
+			{
+				streamWriter.WriteLine(lyrics[counter]);
+			}
+			
+		    streamWriter.Close();
+		}
+		
+		/* Read File */
+		FileStream filestream2 = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+		using (StreamReader streamReader = new StreamReader(filestream2))
+		{
+			string content;
+			while((content = streamReader.ReadLine()) != null) 
+			{
+				Console.WriteLine(content);
+			}
+		
+		streamReader.Close();
+		
+		}
+	}
+}
