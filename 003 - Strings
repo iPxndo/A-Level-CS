@@ -1,0 +1,17 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Enter a 9 letter word: ");
+		string string9Letter = Console.ReadLine();
+		
+		Console.WriteLine("\n");
+		
+		Console.WriteLine($"Substring 1 = {string9Letter.Substring(0,3)}");
+        Console.WriteLine($"Substring 2 = {string9Letter.Substring(3,3)}");
+		Console.WriteLine($"Substring 3 = {string9Letter.Substring(6,3)}");
+
+	}
+}
