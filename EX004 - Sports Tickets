@@ -1,0 +1,48 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Input Tier and Convert to Lowercase
+		Console.Write("Lower or Upper Tier: ");
+		string tier = Console.ReadLine().ToLower();
+		
+        //Input Age
+		Console.Write("Enter Age: ");
+		int age = Convert.ToInt32(Console.ReadLine());
+		//Lower & U16
+		if (age <= 16 && tier == "lower")
+		{
+			Console.WriteLine("Your Ticket Costs: £5");
+		}
+		//Upper & U16
+		else if (age <= 16 && tier == "upper")
+		{
+			Console.WriteLine("Your Ticket Costs: £10");
+		}
+		
+		//Lower & 65+
+		else if (age >= 65 && tier == "lower")
+		{
+			Console.WriteLine("Your Ticket Costs: £10");
+		}
+		//Upper & 65+
+		else if (age >= 65 && tier == "upper")
+		{
+			Console.WriteLine("Your Ticket Costs: £15");
+		}
+		
+		//Lower & 17-64
+		else if (age >= 17 && age <= 64 && tier == "lower")
+		{
+			Console.WriteLine("Your Ticket Costs: £20");
+		}
+		//Upper & 17-64
+		else if (age >= 17 && age <= 64 && tier == "upper")
+		{
+			Console.WriteLine("Your Ticket Costs: £25");
+		}
+	
+	}
+}
