@@ -1,0 +1,13 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		for (int x = 0; x >-101;)
+		{
+			Console.WriteLine(x);
+			x = x-2;
+		}
+	}
+}
