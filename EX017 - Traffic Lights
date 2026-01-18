@@ -1,0 +1,21 @@
+using System;
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Enter Colour Combination: ");
+		string colour = Console.ReadLine().ToLower();
+		
+		switch(colour) {
+			case "red":
+			case "amber":
+				Console.WriteLine("Stop");
+				break;
+			case "flashing amber":
+			case "green":
+				Console.WriteLine("Go");
+				break;
+		}
+		
+	}
+}
