@@ -1,0 +1,36 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int bandA=0,bandB=0,bandC=0,bandD=0;
+		
+		int[] temperatures = { 19,31,3,24,37,37,32, 13,18,3,31,39,36,29, 13,35,39,30,38,15,8, 14,22,7,31,29,11,8, 23,10,2,39,2,24,25, 25,12,30,5,39,36,39, 13,20,23,39,9,6,24, 17,40,34,13,27,2,33, 40,3,6,12,14,18,26, 24,20,11,40,17,30,37, 2,5,26,33,5,1,39, 23,33,31,1,4,0,10 };
+		for(int counter = 0; counter < temperatures.Length; counter++)
+		{
+			if(temperatures[counter] <= 10)
+			{
+				bandA = bandA+1;
+			}
+			if(temperatures[counter] >= 11 && temperatures[counter] <= 20)
+			{
+				bandB = bandB+1;
+			}
+			if(temperatures[counter] >= 21 && temperatures[counter] <= 30)
+			{
+				bandC = bandC+1;
+			}
+			if(temperatures[counter] >= 31)
+			{
+				bandD = bandD+1;
+			}
+		}
+		
+		Console.WriteLine($"Band A = {bandA}");
+		Console.WriteLine($"Band B = {bandB}");
+		Console.WriteLine($"Band C = {bandC}");
+		Console.WriteLine($"Band D = {bandD}");
+		
+	}
+}
