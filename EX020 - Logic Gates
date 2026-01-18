@@ -1,0 +1,69 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string gate;
+		int i1,i2,output=0;
+		
+		Console.Write("Enter Logic Gate: ");
+		gate = Console.ReadLine().ToLower();
+		
+		Console.Write("Enter First Input: ");
+		i1 = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Enter Second Input: ");
+		i2 = Convert.ToInt32(Console.ReadLine());
+		
+		// AND
+		if(gate == "and") {
+			if(i1==1 && i2==1) {
+				output = 1;
+			}
+		}
+		
+		// OR
+		if(gate == "or") {
+			if(i1==1 || i2==1) {
+				output = 1;
+			}
+		}
+		
+		// NAND
+		if(gate == "nand") {
+			if(i1==1 && i2==1) {
+				output = 0;
+			}
+			else {
+				output = 1;
+			}
+		}
+		
+		// NOR
+		if(gate == "nor") {
+			if(i1==1 || i2==1) {
+				output = 0;
+			}
+			else {
+				output = 1;
+			}
+		}
+		
+		// XOR
+		if(gate == "xor") {
+			if(i1==1 || i2==1) {
+				if(i1==1 && i2==1) {
+					output = 0;
+				}
+				else {
+					output = 1;
+				}
+			}
+		}
+		
+		Console.WriteLine("\n");
+		Console.WriteLine($"Output = {output}");
+		
+	}
+}
