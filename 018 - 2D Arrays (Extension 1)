@@ -1,0 +1,27 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[,] jediCouncil = { 
+			{"Yoda","Green"}, 
+			{"Even Piell","Green"}, 
+			{"Saesee Tiin","Green"}, 
+			{"Mace Windu","Purple"}, 
+			{"Plo Koon","Blue"}, 
+			{"Oppo Rancisis","Green"}, 
+			{"Ki Adi Mundi","Blue"} 
+		};
+		
+		Array.Reverse(jediCouncil);
+		
+		for(int counter = 0; counter<7; counter++)
+		{
+			Console.WriteLine($"{jediCouncil[counter,0]}, {jediCouncil[counter,1]}");
+		}
+		
+
+		
+	}
+}
