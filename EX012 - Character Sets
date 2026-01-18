@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int ascii = 0;
+		
+		Console.Write("Enter EBCDIC value: ");
+		int ebcdic = Convert.ToInt32(Console.ReadLine());
+		
+		if(ebcdic <= 201) {
+			ascii = ebcdic-128;
+		}
+		
+		else if(ebcdic >= 209 && ebcdic <= 217) {
+			ascii = ebcdic- 135;
+		}
+		
+		else if(ebcdic >= 226) {
+			ascii = ebcdic-143;
+		}
+		
+		Console.WriteLine("\n");
+		Console.WriteLine($"EBCDIC = {ebcdic} | ASCII = {ascii}");
+		
+	}
+}
