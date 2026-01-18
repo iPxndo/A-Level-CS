@@ -1,0 +1,15 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int counter = 0;
+		do
+		{
+			Console.WriteLine(counter);
+			counter++;
+		}
+		while(counter<11);
+	}
+}
