@@ -1,0 +1,45 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string [, ,] timetables = new string [2, 3, 3]; 
+		//Student 1 
+		timetables [0,0,0] = "French"; 
+		timetables [0,0,1] = "German"; 
+		timetables [0,0,2] = "History";
+			
+		timetables [0,1,0] = "Geography"; 
+		timetables [0,1,1] = "History"; 
+		timetables [0,1,2] = "IT"; 
+		
+		timetables [0,2,0] = "Computer Science"; 
+		timetables [0,2,1] = "English"; 
+		timetables [0,2,2] = "History"; 
+		
+		//Student 2 
+		timetables [1,0,0] = "IT";
+		timetables [1,0,1] = "Spanish";
+		timetables [1,0,2] = "English";
+		
+		timetables [1,1,0] = "Food Technology";
+		timetables [1,1,1] = "History";
+		timetables [1,1,2] = "French";
+		
+		timetables [1,2,0] = "Computer Science";
+		timetables [1,2,1] = "Geography";
+		timetables [1,2,2] = "French";
+		
+		Console.Write("Enter Student ID: ");
+		int id = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Enter Period: ");
+		int period = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Enter Day: ");
+		int day = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine($"\n{timetables[id,period,day]}");
+	}
+}
