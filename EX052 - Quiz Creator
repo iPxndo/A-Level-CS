@@ -1,0 +1,99 @@
+using System;
+using System.IO;
+public class Program
+{
+	public static void Main()
+	{
+		// Variables
+		string questions = "questions.txt";
+		string answers = "answer.txt";
+		string question,ans,input;
+		int score = 0;
+		
+		// Question File
+		FileStream fs1 = new FileStream(questions, FileMode.Create, FileAccess.Write);
+		using(StreamWriter sw = new StreamWriter(fs1))
+		{
+			sw.WriteLine("What is the capital of France? ");
+            sw.WriteLine("What is the capital of Germany? ");
+			sw.WriteLine("What is the capital of Italy? ");
+			sw.WriteLine("What is the capital of Spain? ");
+			sw.WriteLine("What is the capital of Canada? ");
+			sw.WriteLine("What is the capital of Australia? ");
+			sw.WriteLine("What is the capital of Japan? ");
+			sw.WriteLine("What is the capital of Wales? ");
+			sw.WriteLine("What is the capital of China? ");
+			sw.WriteLine("What is the capital of India? ");
+			sw.WriteLine("What is the capital of Mexico? ");
+			sw.WriteLine("What is the capital of Egypt? ");
+			sw.WriteLine("What is the capital of Turkey? ");
+			sw.WriteLine("What is the capital of England? ");
+			sw.WriteLine("What is the capital of Argentina? ");
+			sw.WriteLine("What is the capital of Russia? ");
+			sw.WriteLine("What is the capital of Ukraine? ");
+			sw.WriteLine("What is the capital of Sweden? ");
+			sw.WriteLine("What is the capital of Saudi Arabia? ");
+			sw.WriteLine("What is the capital of New Zealand? ");
+			sw.Close();
+		}
+		
+		// Answer File
+		FileStream fs2 = new FileStream(answers, FileMode.Create, FileAccess.Write);
+		using(StreamWriter sw2 = new StreamWriter(fs2))
+		{
+            sw2.WriteLine("Paris");
+            sw2.WriteLine("Berlin");
+            sw2.WriteLine("Rome");
+            sw2.WriteLine("Madrid");
+            sw2.WriteLine("Ottawa");
+            sw2.WriteLine("Canberra");
+            sw2.WriteLine("Tokyo");
+            sw2.WriteLine("Cardiff");
+            sw2.WriteLine("Beijing");
+            sw2.WriteLine("New Delhi");
+            sw2.WriteLine("Mexico City");
+            sw2.WriteLine("Cairo");
+            sw2.WriteLine("Ankara");
+            sw2.WriteLine("London");
+            sw2.WriteLine("Buenos Aires");
+            sw2.WriteLine("Moscow");
+            sw2.WriteLine("Kyiv");
+            sw2.WriteLine("Stockholm");
+            sw2.WriteLine("Riyadh");
+            sw2.WriteLine("Wellington");
+
+			sw2.Close();
+		}
+		
+		// Quiz
+		FileStream fs3 = new FileStream(questions, FileMode.Open, FileAccess.Read);
+		FileStream fs4 = new FileStream(answers, FileMode.Open, FileAccess.Read);
+		using(StreamReader sr1 = new StreamReader(fs3))
+		using(StreamReader sr2 = new StreamReader(fs4))	
+		{
+			while((question = sr1.ReadLine()) != null)
+			{
+				Console.Write(question);
+				input = Console.ReadLine();
+			
+			    ans = sr2.ReadLine();
+			    if((input.ToLower()) == (ans.ToLower()))
+			    {
+					Console.WriteLine("Correct!");
+					score = score + 1;
+				}
+				else
+				{
+					Console.WriteLine($"Wrong! The Corrrect Answer is {ans}");	
+				}
+				Console.WriteLine("\n");
+			}
+			
+			sr1.Close();
+			sr2.Close();
+		}
+		
+		Console.WriteLine($"Score = {score}/20");
+	
+	}
+}
