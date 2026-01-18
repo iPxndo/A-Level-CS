@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int counter = 10;
+		do
+		{
+			if(counter>1)
+			{
+				Console.WriteLine($"The rocket will launch in {counter} seconds");
+			}
+			
+			else if(counter==1)
+			{
+				Console.WriteLine($"The rocket will launch in 1 second");
+			}
+			
+			else
+			{
+				Console.WriteLine($"Rocket Launched!");
+			}
+			
+			counter--;
+		}
+		while(counter>-1);
+	}
+}
