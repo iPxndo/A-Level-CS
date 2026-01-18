@@ -1,0 +1,20 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Enter a 10 letter word: ");
+		string string10Letter = Console.ReadLine();
+		Console.WriteLine($"\n");
+		Console.WriteLine($"{string10Letter} \n");
+		
+		Console.WriteLine(string10Letter.Substring(0,1));
+		Console.WriteLine(string10Letter.Substring(1,2));
+		Console.WriteLine(string10Letter.Substring(3,3));
+		Console.WriteLine(string10Letter.Substring(6,4));
+		Console.WriteLine($"\n");
+		
+		Console.WriteLine($"{string10Letter.Substring(0,1)} {string10Letter.Substring(1,2)} {string10Letter.Substring(3,3)} {string10Letter.Substring(6,4)}");
+	}
+}
