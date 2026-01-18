@@ -1,0 +1,27 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[,] names = new string[5,2];
+		int num = 1;
+		for(int count=0; count<names.Length/2; count++) {
+			Console.Write("Enter Name: ");
+			names[count,1] = Console.ReadLine();
+		}
+		Console.WriteLine("\n");
+		Console.WriteLine("Ascending Order:");
+		for(int x=0; x < names.Length/2; x++) {
+			Console.WriteLine($"{num}: {names[x,1]}");
+			num = num+1;
+		}
+		num=1;
+		Console.WriteLine("\n");
+		Console.WriteLine("Descending Order:");
+		for(int x=4; x >= 0; x--) {
+			Console.WriteLine($"{num}: {names[x,1]}");
+			num = num+1;
+		}
+	}
+}
