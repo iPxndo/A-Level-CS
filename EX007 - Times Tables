@@ -1,0 +1,23 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int tTable = 0;
+		int amount = 0;
+		
+		Console.Write("Which Times Tables Would You Like? ");
+		tTable = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("How Far Would You Like To Go? ");
+		amount = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("\n");
+		
+		for (int x = 1; x <(amount+1); x++)
+		{
+			Console.WriteLine($"{x} * {tTable} = {x*tTable}");
+		}
+	}
+}
