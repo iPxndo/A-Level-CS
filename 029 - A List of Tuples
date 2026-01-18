@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int count=0;
+		
+		var listEmployee = new List<Tuple<int, string, string>> { 
+			Tuple.Create(1, "Joydip Kanjilal", "INDIA"), 
+			Tuple.Create(2, "Michael Stevens", "USA"), 
+			Tuple.Create(3, "Steve Barnes", "USA"),
+			Tuple.Create(4, "Karen Brady", "UK"),
+			Tuple.Create(5, "Alan Sugar", "UK"),
+			Tuple.Create(6, "Nick Hewer", "UK"),
+			Tuple.Create(7, "Margaret Mountford", "UK"),
+			Tuple.Create(8, "Claude Littner", "UK") };
+		
+		for(int x=0; x<listEmployee.Count; x++){
+			if(listEmployee[x].Item3 == "UK"){
+				count = count+1;
+				Console.WriteLine($"{listEmployee[x].Item1}, {listEmployee[x].Item2}, {listEmployee[x].Item3}");
+			}
+		}
+		
+		Console.WriteLine("\n");
+		Console.WriteLine($"There are {count} employees from the UK.");
+	}
+}
