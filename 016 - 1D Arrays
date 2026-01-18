@@ -1,0 +1,24 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] jediCouncil = {"Yoda","Even Piell","Saesee Tiin","Mace Windu","Plo Koon","Oppo Rancisis","Ki Adi Mundi"};
+		
+		Console.WriteLine("Jedi Council = Yoda, Even Piell, Saesee Tiin, Mace Windu , Plo Koon , Oppo Rancisis, Ki Adi Mundi");
+		
+		Console.Write("Enter Number between 0-6: ");
+		int number = Convert.ToInt32(Console.ReadLine());
+		
+		if(number > 6)
+		{
+			Console.WriteLine("Element Not Recognised");
+		}
+		
+		else
+		{
+			Console.WriteLine(jediCouncil[number]);
+		}
+	}
+}
