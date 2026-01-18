@@ -1,0 +1,23 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[,] airports = { {"BCN","Barcelona International"}, {"DUB","Dublin"},{"LIS","Lisbon"},{"LHR","London Heathrow"},{"CDG","Paris, Charles De Gaulle"},{"PRG","Prague"},{"RKV","Reykjavik"},{"FCO","Rome, Fiumicino"} };
+		
+		Console.Write("Enter Airport Code: ");
+		string code = Console.ReadLine();
+		
+		for(int counter = 0; counter <= airports.Length; counter++) {
+			if(code == airports[counter,0]) {
+				Console.WriteLine(airports[counter,1]);
+				break;
+			}
+			else if(counter == (airports.Length/2-1) && code != airports[counter,0]) {
+				Console.WriteLine("Airport Not Found!");
+				break;
+			}
+		}
+	}
+}
