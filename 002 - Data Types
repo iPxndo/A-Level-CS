@@ -1,0 +1,29 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Product 1 Name
+		Console.Write("Enter Product Name: ");
+		string product1Name = Console.ReadLine();
+		//Product 1 Price
+		Console.Write("Enter Product 1's Price: ");
+		double product1Price = Convert.ToDouble(Console.ReadLine());
+		//Product 2 Name
+		Console.Write("Enter Product Name: ");
+		string product2Name = Console.ReadLine();
+		//Product 2 Price
+		Console.Write("Enter Product 1's Price: ");
+		double product2Price = Convert.ToDouble(Console.ReadLine());
+		//Total Cost
+		double totalCost = product1Price + product2Price;
+		totalCost = Math.Round(totalCost, 2);
+		//Product 1 Name and Price
+		Console.WriteLine($"{product1Name} = £{product1Price}");
+		//Product 2 Name and Price
+		Console.WriteLine($"{product2Name} = £{product2Price}");
+		//Total Cost
+		Console.WriteLine($"Total Cost = £{totalCost}");
+	}
+}
