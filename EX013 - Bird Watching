@@ -1,0 +1,25 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] birdName = {"robin","blackbird","pigeon","magpie","bluetit","thrush","wren","starling"};
+		
+		Console.Write("Enter Bird Name: ");
+		string bird = Console.ReadLine();
+
+		for(int counter = 0; counter <= birdName.Length; counter++) {
+			if(bird == birdName[counter]) {
+				Console.WriteLine($"Bird found at {counter}");
+				break;
+			}
+			
+			else if(counter == (birdName.Length-1) && bird != birdName[counter]) {
+				Console.WriteLine("Bird Species not in Array!");
+				break;
+			}
+
+		}
+	}
+}
