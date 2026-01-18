@@ -1,0 +1,41 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		//Input Score
+		Console.Write("What Percentage did you recieve? ");
+		int score = Convert.ToInt32(Console.ReadLine());
+		
+		//Distinction
+		if (score >= 85)
+		{
+			Console.WriteLine("Distinction");
+		}
+		
+		//Merit
+		if (score >= 65 && score <= 84)
+		{
+			Console.WriteLine("Merit");
+		}	
+
+		//Pass
+		if (score >= 40 && score <= 64)
+		{
+			Console.WriteLine("Pass");
+		}
+		
+		//Fail
+		if (score <= 39 && score >= 0)
+		{
+			Console.WriteLine("Fail");
+		}
+		
+		//Invalid Score
+		if (score > 100 && score < 0)
+		{
+			Console.WriteLine("Invalid Score");
+		}
+	}
+}
