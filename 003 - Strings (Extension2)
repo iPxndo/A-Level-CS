@@ -1,0 +1,25 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("--- STRING REVERSAL --- \n");
+		
+		//Input
+		Console.Write("Enter a Phrase: ");
+		string stringInput = Console.ReadLine();
+		
+		//Converts to Array
+		char[] stringReverse = stringInput.ToCharArray();
+		
+		//Line Break
+		Console.WriteLine($"\n");
+		
+		//Reverses String
+		Array.Reverse(stringReverse);
+		
+		//Writes Reversed String
+		Console.WriteLine(stringReverse);
+	}
+}
