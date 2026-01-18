@@ -1,0 +1,19 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int max = 90;
+		int[,] matrix = { {12, 23, 45, 67}, 
+						 {78, 56, 89, 90}, 
+						 {34, 65, 77, 29}, 
+						 {19, 31, 73, 81} };
+		foreach(int x in matrix) {
+			if(x > max) {
+				max = x;
+			}
+		}
+		Console.WriteLine(max);
+	}
+}
