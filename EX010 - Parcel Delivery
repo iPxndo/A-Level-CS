@@ -1,0 +1,41 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double weight = 0;
+		double volume = 0;
+		double cost = 0;
+		
+		Console.Write("Enter Weight(kg) of Parcel: ");
+		weight = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("\n");
+		
+		Console.Write("Enter Volume(m³) of Parcel: ");
+		volume = Convert.ToDouble(Console.ReadLine());
+		
+		if(weight<4 && volume<0.3)
+		{
+			cost = 5;
+		}
+		
+		else if(weight>(volume*10))
+		{
+			cost = weight * 2;
+		}
+		
+		else
+		{
+			cost = volume * 20;
+		}
+		
+		Console.WriteLine("\n");
+		
+		Console.WriteLine($"Thank you for using our service to send a parcel weighing {weight}kg, with a volume of {volume}m³");
+		Console.WriteLine($"The total cost for your delivery will be £{cost}");
+	
+	
+	}
+}
