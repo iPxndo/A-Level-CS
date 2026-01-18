@@ -1,0 +1,50 @@
+using System;
+using System.IO;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string filePath = "birds.txt"; // writing to an imaginary file in .NET Fiddle's sandbox 
+		int eagle = 0;
+		
+		/* Writing to the file we created above */ 
+		
+		FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write); 
+		using (StreamWriter streamWriter = new StreamWriter(fileStream)) 
+		{ 
+			streamWriter.WriteLine("Robin"); 
+			streamWriter.WriteLine("Magpie"); 
+			streamWriter.WriteLine("Chaffinch"); 
+			streamWriter.WriteLine("Eagle"); 
+			streamWriter.WriteLine("Thrush"); 
+			streamWriter.WriteLine("Sparrow"); 
+			streamWriter.WriteLine("Eagle"); 
+			streamWriter.WriteLine("Pigeon"); 
+			streamWriter.WriteLine("Eagle"); 
+			streamWriter.WriteLine("Swallow"); 
+			
+			streamWriter.Close(); 
+		}
+		
+		/* Reading from the file we created above */ 
+		
+		FileStream fileStream2 = new FileStream(filePath, FileMode.Open, FileAccess.Read); 
+		using (StreamReader streamReader = new StreamReader(fileStream2)) 
+		{ 
+			string content;
+			while((content = streamReader.ReadLine()) != null){ 
+				Console.WriteLine(content);
+				if(content == "Eagle") {
+					eagle = eagle+1;
+				}
+				
+		} 
+		streamReader.Close();
+		
+		Console.WriteLine("\n");
+		Console.WriteLine($"There were {eagle} eagles in the file");
+		
+		}
+	} 
+}
