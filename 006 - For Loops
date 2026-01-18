@@ -6,8 +6,7 @@ public class Program
 	{
 		for (int x = 10; x > -1; x--)
 		{
-			Console.WriteLine(x);
-			
+			Console.WriteLine(x);	
 		}
 	}
 }
