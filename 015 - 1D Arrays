@@ -1,0 +1,14 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] jediCouncil = {"Yoda","Even Piell","Saesee Tiin","Mace Windu","Plo Koon","Oppo Rancisis","Ki Adi Mundi"};
+		
+		for (int counter = (jediCouncil.Length-1); counter > -1; counter--)
+		{
+			Console.WriteLine(jediCouncil[counter]);
+		}
+	}
+}
