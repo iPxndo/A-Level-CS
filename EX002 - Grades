@@ -1,0 +1,30 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		// Input Grade
+		Console.WriteLine("What grade did you get? ");
+		string grade = Console.ReadLine();
+		
+		// Well Done
+		if (grade == "A" || grade == "B")
+		{
+			Console.WriteLine("Well Done");
+		}
+		
+		// Room for Improvement
+		else if (grade == "C")
+		{
+			Console.WriteLine("Room for Improvement");
+		}
+		
+		// Try Harder
+		else
+		{
+			Console.WriteLine("Try Harder");
+		}
+	
+	}
+}
