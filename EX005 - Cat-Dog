@@ -1,0 +1,67 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Variables
+		string pet = "";
+		string package = "";
+		int days = 0;
+		double cost = 0;
+		
+		//Input Dog or Cat
+		Console.Write("Are You Booking a Cat or Dog: ");
+		pet = Console.ReadLine().ToLower();
+		
+		//Input Length of Stay in Days
+		Console.Write("Length of Booking (Days): ");
+		days = Convert.ToInt32(Console.ReadLine());
+		
+		//Dog
+		if (pet == "dog")
+		{
+			//Input Package
+			Console.Write("Platinum or Gold Package: ");
+			package = Console.ReadLine().ToLower();
+			
+			//Dog Platinum
+			if (package == "platinum")
+			{
+				cost = days * 20;
+				cost = (0.25 * cost) + cost;
+				Console.WriteLine($"The {pet} {package} package for {days} days will cost £{cost}");
+			}
+
+			//Dog Gold
+			if (package == "gold")
+			{
+				cost = days * 20;
+				Console.WriteLine($"The {pet} {package} package for {days} days will cost £{cost}");
+			}
+		}
+
+		//Cat
+		if (pet == "cat")
+		{
+			//Input Package
+			Console.Write("Gold or Silver Package: ");
+			package = Console.ReadLine().ToLower();
+			
+			//Cat Gold
+			if (package == "gold")
+			{
+				cost = days * 20;
+				cost = (0.25 * cost) + cost;
+				Console.WriteLine($"The {pet} {package} package for {days} days will cost £{cost}");
+			}
+
+			//Cat Silver
+			if (package == "silver")
+			{
+				cost = days * 20;
+				Console.WriteLine($"The {pet} {package} package for {days} days will cost £{cost}");
+			}
+		}
+	}
+}
