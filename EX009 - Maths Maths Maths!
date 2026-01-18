@@ -1,0 +1,74 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int function = 0;
+		double num1 = 0;
+		double num2 = 0;
+		double ans = 0;
+		
+		Console.WriteLine("1. Addition");
+		Console.WriteLine("2. Subtraction");
+		Console.WriteLine("3. Multiplication");
+		Console.WriteLine("4. Division");
+		Console.WriteLine("5. MOD Modulus");
+		Console.WriteLine("6. Div Quotient");
+		Console.WriteLine("7. Exponentiation \n");
+		
+		Console.Write("Which Function would you to perform? ");
+		function = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Enter First Number: ");
+		num1 = Convert.ToDouble(Console.ReadLine());		
+		
+		Console.Write("Enter Second Number: ");
+		num2 = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("\n");
+		
+		if(function == 1)
+		{
+			ans = num1 + num2;
+			Console.WriteLine($"{num1} + {num2} = {ans}");
+		}
+		
+		else if(function == 2)
+		{
+			ans = num1 - num2;
+			Console.WriteLine($"{num1} - {num2} = {ans}");
+		}
+		
+		else if(function == 3)
+		{
+			ans = num1 * num2;
+			Console.WriteLine($"{num1} x {num2} = {ans}");
+		}
+	
+		else if(function == 4)
+		{
+			ans = num1 / num2;
+			Console.WriteLine($"{num1} / {num2} = {ans}");
+		}
+		
+		else if(function == 5)
+		{
+			ans = num1 % num2;
+			Console.WriteLine($"{num1} MOD {num2} = {ans}");
+		}
+	
+		else if(function == 6)
+		{
+			ans = Math.Floor(num1/num2);
+			Console.WriteLine($"{num1} DIV {num2} = {ans}");
+		}
+		
+		else if(function == 7)
+		{
+			ans = Math.Pow(num1,num2);
+			Console.WriteLine($"{num1} ^ {num2} = {ans}");
+		}
+	
+	}
+}
