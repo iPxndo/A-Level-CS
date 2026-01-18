@@ -1,0 +1,31 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[,] jediCouncil = { 
+			{"Yoda","Green"}, 
+			{"Even Piell","Green"}, 
+			{"Saesee Tiin","Green"}, 
+			{"Mace Windu","Purple"}, 
+			{"Plo Koon","Blue"}, 
+			{"Oppo Rancisis","Green"}, 
+			{"Ki Adi Mundi","Blue"} 
+		};
+		
+		Console.Write("Choose Number Between 0-6: ");
+		int column = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Choose Number Between 0-1: ");
+		int row = Convert.ToInt32(Console.ReadLine());
+		
+		if(column > 6 || row > 1)
+		{
+			Console.WriteLine("Element Not Recognised");
+			Environment.Exit(0);
+		}
+		
+		Console.WriteLine(jediCouncil[column,row]);
+	}
+}
