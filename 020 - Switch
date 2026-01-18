@@ -1,0 +1,40 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		while (true) {
+			Console.Write("Enter a Month: ");
+			string month = Console.ReadLine().ToLower();
+			
+			switch (month) {
+				case "february":
+					Console.WriteLine($"{month} has 28 or 29 days!");
+					break;
+				case "april":
+				case "june":
+				case "september":
+				case "november":
+					Console.WriteLine($"{month} has 30 days!");
+					break;
+				
+				case "january":
+				case "march":
+				case "may":
+				case "july":
+				case "august":
+				case "october":
+				case "december":
+					Console.WriteLine($"{month} has 31 days!");
+					break;
+				
+				default:
+					Console.WriteLine($"Element Not Recognised!");
+					break;
+			}
+			
+			Console.WriteLine("\n");
+		}
+	}
+}
