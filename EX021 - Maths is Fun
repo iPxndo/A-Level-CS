@@ -1,0 +1,105 @@
+using System;
+
+public class Program { 
+	public static void Main() { 
+		Console.WriteLine ("What do you want to do?\n"); 
+		Console.WriteLine ("\tA:getHypotenuse()\n\tB:isIsosceles()\n\tC:isEquilateral()\n\tD:getAngle()\n\tE:getArea()\n\tF:getPerimeter()\n"); 
+		string choice = Console.ReadLine().ToUpper(); 
+		double a; 
+		double b; 
+		double c; 
+		double tBase; 
+		double tHeight;
+		double angle1;
+		double angle2;
+		
+		switch (choice) { 
+			case "A": 
+				Console.WriteLine("Enter length of side a");
+				a = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter length of side b"); 
+				b = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine(getHypotenuse(a,b));
+				break;
+			
+			case "B":
+				Console.WriteLine("Enter length of side a");
+				a = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter length of side b"); 
+				b = Double.Parse(Console.ReadLine());
+				Console.WriteLine("Enter length of side c");
+				c = Double.Parse(Console.ReadLine());
+				Console.WriteLine(isIsosceles(a,b,c)); 
+				break; 
+			
+			case "C":
+				Console.WriteLine("Enter length of side a");
+				a = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter length of side b"); 
+				b = Double.Parse(Console.ReadLine());
+				Console.WriteLine("Enter length of side c");
+				c = Double.Parse(Console.ReadLine());
+				Console.WriteLine(isEquilateral(a,b,c));
+				break; 
+			
+			case "D":
+				Console.WriteLine("Enter Angle 1");
+				angle1 = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter Angle 2"); 
+				angle2 = Double.Parse(Console.ReadLine());
+				Console.WriteLine(getAngle(angle1,angle2));
+				break; 
+			
+			case "E":
+				Console.WriteLine("Enter Height of Triangle");
+				tHeight = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter Width of Base"); 
+				tBase = Double.Parse(Console.ReadLine());
+				break; 
+			
+			case "F":
+				Console.WriteLine("Enter length of side a");
+				a = Double.Parse(Console.ReadLine()); 
+				Console.WriteLine("Enter length of side b"); 
+				b = Double.Parse(Console.ReadLine());
+				Console.WriteLine("Enter length of side c");
+				c = Double.Parse(Console.ReadLine());
+				Console.WriteLine(getPerimeter(a,b,c)); 
+				break; 
+			
+			default: 
+				Console.WriteLine("Please try again"); 
+				break;
+		}
+		
+	}
+	static double getPerimeter(double a, double b, double c){ // F
+		double perimeter = a + b + c; return perimeter; 
+	} 
+	static double getArea(double tBase, double tHeight){ // E
+		double area = tHeight*tBase;
+		return area; 
+	} 
+	static double getAngle(double angle1, double angle2){ // D
+		double angle = 180-angle1-angle2;
+		return angle;
+	} 
+	static bool isEquilateral(double a, double b, double c){ // C
+		bool equilateral = false;
+		if(a==b && a==c && b==c){
+			equilateral = true;
+		}
+		return equilateral; 
+	} 
+	static bool isIsosceles(double a, double b, double c){ // B
+		bool isosceles = false;
+		if(a==b || a==c || b==c){
+			isosceles = true;
+		}
+		return isosceles; 
+	} 
+	static double getHypotenuse(double a, double b){ // A
+		double hypotenuse = Math.Sqrt((a*a)+(b*b));
+		return hypotenuse; 
+	} 
+}
