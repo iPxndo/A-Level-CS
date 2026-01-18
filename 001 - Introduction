@@ -1,0 +1,37 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Greeting User
+		Console.WriteLine("Hello Xander! \n");
+		
+		//Ask What's Happening
+		string whatHappen = "What's Happening? \n";
+		Console.WriteLine(whatHappen);
+		
+		//Ask First Name
+		Console.WriteLine("What is your First Name?");
+		string fName = Console.ReadLine();
+		
+		//Line Break
+		Console.WriteLine("\n");
+		
+		//Ask Last Name
+		Console.WriteLine("What is your Last Name?");
+		string lName = Console.ReadLine();
+		
+		//Line Break
+		Console.WriteLine("\n");
+
+		Console.WriteLine("How old are you?");
+		int age = Convert.ToInt32(Console.ReadLine());
+		
+		//Line Break
+		Console.WriteLine("\n");
+		
+		//Greet Full Name
+		Console.WriteLine("Nice to Meet you " + fName + " " + lName + "! You are " + age + " years old!");
+	}
+}
