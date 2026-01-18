@@ -1,0 +1,25 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string heater="OFF",amber="OFF",red="OFF";
+		
+		Console.WriteLine("Enter Temperature Reading: ");
+		double temp = Convert.ToDouble(Console.ReadLine());
+		
+		if (temp <= 95.000) {
+			heater = "ON";
+		}
+		else if (temp >= 95 && temp <= 97.5) {
+			amber = "ON";
+		}
+		else if (temp >= 98.1) {
+			red = "ON";
+		}
+		
+		Console.WriteLine($"Heater = {heater} | Amber = {amber} | Red = {red}");
+
+	}
+}
