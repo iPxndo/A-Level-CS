@@ -1,0 +1,48 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//Variables
+		int people = 0;
+		int miles = 0;
+		double cost = 0;
+		
+		//Input Number of Passengers
+		Console.Write("Enter Number of Passengers: ");
+		people = Convert.ToInt32(Console.ReadLine());
+		
+		//Length of Journey in Miles
+		Console.Write("Enter Length of Journey (Miles): ");
+		miles = Convert.ToInt32(Console.ReadLine());
+		
+		//Line Break
+		Console.WriteLine("\n");
+		
+		//Passengers >= 4
+		if (people >= 4)
+		{
+			cost = miles * 5 * 0.90;
+			Console.WriteLine($"Passengers = {people}");
+			Console.WriteLine($"Miles = {miles} ");
+			Console.WriteLine($"Cost = £{cost}");
+		}
+		//Passengers = 2 or 3
+		else if (people == 2 || people == 3)
+		{
+			cost = miles * 5 * 0.95;
+			Console.WriteLine($"Passengers = {people}");
+			Console.WriteLine($"Miles = {miles} ");
+			Console.WriteLine($"Cost = £{cost}");
+		}
+		//Passengers = 1
+		else if (people == 1)
+		{
+			cost = miles * 5;
+			Console.WriteLine($"Passenger = {people}");
+			Console.WriteLine($"Miles = {miles} ");
+			Console.WriteLine($"Cost = £{cost}");
+		}
+	}
+}
