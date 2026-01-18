@@ -1,0 +1,30 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		for (int x = 10; x >-1; x--)
+		{
+			while (x > 1)
+			{
+				Console.WriteLine($"The Rocket will Launch in {x} seconds");
+				Console.WriteLine("\n");
+				x = x-1;
+			}
+			
+			if (x == 1)
+			{
+				Console.WriteLine($"The Rocket will Launch in {x} second");
+				Console.WriteLine("\n");
+			}
+			
+			else
+			{
+				Console.WriteLine("Rocket Launched!!!");
+			}	
+		
+		
+		}
+	}
+}
