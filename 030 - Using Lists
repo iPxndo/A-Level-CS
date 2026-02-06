@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+	public static void Main()
+	{
+		List<string> strList = new List<string>();  
+		strList.Add("Monday"); 
+		strList.Add("Tuesday");
+		strList.Add("Wednesday"); 
+		strList.Add("Thursday"); 
+		strList.Add("Friday"); 
+		strList.Add("Saturday"); 
+		strList.Add("Sunday"); 
+		
+		OutputList(strList); 
+		
+	}
+	
+	public static void OutputList(List<string> strList) 
+	{ 
+		// Output 1
+		Console.WriteLine($"There are {strList.Count} items in the list"); 
+		Console.WriteLine("-----------------------------"); 
+		foreach (string value in strList) { 
+			Console.WriteLine(value); 
+		}
+		
+		// Output 2
+		strList.Remove("Wednesday");
+		Console.WriteLine("-----------------------------"); 
+		Console.WriteLine($"There are {strList.Count} items in the list"); 
+		foreach (string value in strList) { 
+			Console.WriteLine(value); 
+		}
+		
+		// Output 3
+		strList.Sort();
+		Console.WriteLine("-----------------------------"); 
+		Console.WriteLine($"There are {strList.Count} items in the list"); 
+		foreach (string value in strList) { 
+			Console.WriteLine(value); 
+		}
+	}
+}
