@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Input a: ");
+		int a = Convert.ToInt32(Console.ReadLine());
+		Console.Write("Input b: ");
+		int b = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine($"y={a}x+{b} \n");
+		
+		Console.Write("Input c: ");
+		int c = Convert.ToInt32(Console.ReadLine());
+		Console.Write("Input d: ");
+		int d = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine($"y={c}x+{d} \n");
+		
+		if(a == c) {
+			Console.WriteLine("Lines are Parrallel");
+		}
+		else {
+			int x = (d-b)/(a-c);
+			int y = a*x + b;
+			Console.WriteLine($"Intersection Point = ({x},{y})");
+		}
+		
+	}
+}
