@@ -1,0 +1,18 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Enter Discounted Price: ");
+		double discountPrice = Convert.ToDouble(Console.ReadLine());
+		
+		Console.Write("Enter Discount(%): ");
+		double discount= Convert.ToDouble(Console.ReadLine());
+		
+		double discountDecimal = (100-discount)/100;
+		double price = discountPrice/discountDecimal;
+		
+		Console.WriteLine($"Original Price = £{price}");
+	}
+}
