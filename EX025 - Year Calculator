@@ -1,0 +1,26 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int total = 0;
+		try
+		{
+			Console.Write("Enter Year: ");
+			string input = Console.ReadLine();
+			char[] year = input.ToCharArray();
+			foreach (char x in year)
+			{
+				int n = Convert.ToInt32(Convert.ToString(x));
+				total = total + n;
+			}
+
+			Console.WriteLine(total);
+		}
+		catch
+		{
+			Console.WriteLine("Invalid Year");
+		}
+	}
+}
