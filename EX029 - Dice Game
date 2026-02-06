@@ -1,0 +1,38 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{ 
+		Random random = new Random();
+		int score=0;
+		
+		for(int x = 1; x<10; x++) {
+			int dice1 = random.Next(1, 7);
+			int dice2 = random.Next(1, 7); 
+			int dice3 = random.Next(1, 7);
+			
+			Console.WriteLine($"{dice1} {dice2} {dice3}");
+			
+			if(dice1 == dice2 && dice1 == dice3) {
+				Console.WriteLine("Three of a Kind: +50");
+				score=score+50;
+			}
+			else if(dice1 == dice2|| dice1 == dice3 || dice2 == dice3) {
+				Console.WriteLine("One Pair = +10");
+				score=score+10;
+			}
+			else if((dice1 % 2 == 0) && (dice2 % 2 == 0) && (dice3 % 2 == 0)) {
+				Console.WriteLine("Three Even Numbers = +15");
+				score=score+15;
+			}
+			else if((dice1 % 2 != 0) && (dice2 % 2 != 0) && (dice3 % 2 != 0)) {
+				Console.WriteLine("Three Even Numbers = +15");
+				score=score+15;
+			}		
+			Console.WriteLine("--------------------");
+		}
+		
+		Console.WriteLine($"Final Score = {score}");
+	} 
+} 
