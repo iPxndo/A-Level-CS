@@ -1,0 +1,63 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] birdName = {"robin","blackbird","pigeon","magpie","bluetit","thrush","wren","starling"};
+		int[] birdCount = {0,0,0,0,0,0,0,0};
+		bool x = false;
+		string bird;
+		int birdObserve;
+		
+		while(!x) {
+			Console.WriteLine("Enter Bird Name: ('x' to end)");
+			bird = Console.ReadLine();
+			
+			if(bird == "x") {
+				x = true;
+				break;
+			}
+			
+			Console.WriteLine("Enter Number Observed: ");
+			birdObserve = Convert.ToInt32(Console.ReadLine());
+			
+			if(bird == birdName[0]) {
+				birdCount[0] = birdObserve;
+			}
+			
+			if(bird == birdName[1]) {
+				birdCount[1] = birdObserve;
+			}
+			
+			if(bird == birdName[2]) {
+				birdCount[2] = birdObserve;
+			}
+			
+			if(bird == birdName[3]) {
+				birdCount[3] = birdObserve;
+			}
+			
+			if(bird == birdName[4]) {
+				birdCount[4] = birdObserve;
+			}
+			
+			if(bird == birdName[5]) {
+				birdCount[5] = birdObserve;
+			}
+			
+			if(bird == birdName[6]) {
+				birdCount[6] = birdObserve;
+			}
+			
+			if(bird == birdName[7]) {
+				birdCount[7] = birdObserve;
+			}
+			
+		}
+		
+		for(int t = 0; t<birdName.Length; t++) {
+			Console.WriteLine($"{birdName[t]} = {birdCount[t]}");
+		}
+	}
+}
