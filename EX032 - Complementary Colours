@@ -1,0 +1,58 @@
+using System; 
+
+public class Program 
+{ 
+	public static void Main() 
+	{ 
+		// Colour
+		int red=0,blue=0,green=0;
+		string redHex,blueHex,greenHex;
+		
+		// Comp Colour
+		int Cred=-1,Cblue=-1,Cgreen=-1;
+		string CredHex,CblueHex,CgreenHex;
+		
+		// Red Value
+		do {
+			Console.Write("Enter Red Value: ");
+			red = Convert.ToInt32(Console.ReadLine());
+		} while(red>255 || red<0);
+		
+		//Blue Value
+		do {	
+			Console.Write("Enter Blue Value: ");
+			blue = Convert.ToInt32(Console.ReadLine());
+		} while(blue>255 || blue<0);	
+		
+		// Green Value
+		do {	
+			Console.Write("Enter Green Value: ");
+			green = Convert.ToInt32(Console.ReadLine());
+		} while(green>255 || green<0);
+		
+		// Convert To Hex
+		redHex = red.ToString("X2");
+		blueHex = blue.ToString("X2");
+		greenHex = green.ToString("X2");
+		
+		Console.WriteLine("\n");
+		
+		// Display Colour Values
+		Console.WriteLine($"Original Colour = R:{red} B:{blue} G:{green}");
+		Console.WriteLine($"Original Colour (HEX) = R:{redHex} B:{blueHex} G:{greenHex}");
+		
+		// Comp Colour Values
+		Cred = 255-red;
+		Cblue = 255-blue;
+		Cgreen = 255-green;
+		
+		// Convert To Hex
+		CredHex = Cred.ToString("X2");
+		CblueHex = Cblue.ToString("X2");
+		CgreenHex = Cgreen.ToString("X2");
+		
+		// Display Comp Colour Values
+		Console.WriteLine($"Complementary Colour = R:{Cred} B:{Cblue} G:{Cgreen}");
+		Console.WriteLine($"Complementary Colour (HEX) = R:{CredHex} B:{CblueHex} G:{CgreenHex}");
+	} 
+}
