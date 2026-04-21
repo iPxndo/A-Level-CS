@@ -1,0 +1,33 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		double metresSecond,thinking,braking,friction=0;
+		
+		Console.Write("Enter Speed (mph): ");
+		int speedMPH = int.Parse(Console.ReadLine());
+		
+		Console.Write("Enter Road Conditions (dry/wet/icy): ");
+		string conditions = Console.ReadLine().ToLower(); 	
+		
+		switch(conditions) {
+			case "dry":
+				friction = 0.7;
+				break;
+			case "wet":
+				friction = 0.5;
+				break;
+			case "icy":
+				friction = 0.3;
+				break;
+		}
+		
+		metresSecond = speedMPH*0.447;
+		thinking = metresSecond*1.5;
+		braking = (metresSecond*metresSecond) / (2*friction*9.81);
+		
+		Console.WriteLine($"Estimated Stopping Distance (m): {Math.Round(thinking+braking,0)}");	
+	}
+}
