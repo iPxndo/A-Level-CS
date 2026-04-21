@@ -1,0 +1,28 @@
+using System; 
+using System.Collections; 
+
+public class Program 
+{ 
+	public static void Main() 
+	{ 
+		Queue myQueue = new Queue(); 
+		
+		myQueue.Enqueue(99); 
+		myQueue.Enqueue(2);
+		myQueue.Enqueue(22);
+		myQueue.Enqueue(45);
+		myQueue.Enqueue(4);
+		myQueue.Enqueue(22);
+		myQueue.Enqueue(22);
+		myQueue.Enqueue(11);
+		myQueue.Enqueue(1);
+		 
+		foreach (var i in myQueue.ToArray()) 
+		{ 
+			Console.WriteLine(i);
+			Console.WriteLine("\n");
+		} 
+		
+		Console.WriteLine($"Number of elements in Queue: {myQueue.Count}"); 
+	} 
+}
