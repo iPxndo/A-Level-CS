@@ -1,0 +1,197 @@
+using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{
+		
+		// Code works on https://www.onlinegdb.com/online_csharp_compiler however on .NET Fiddle Every Input causes the RandInts to regenerate
+		
+		int score = 0;
+		int rounds = 0;
+		string answer,guess;
+		
+		Hashtable locationHash = new Hashtable()
+		{
+			{
+				"Old Kent Road",
+				"Brown"
+			},
+			{
+				"Whitechapel Road",
+				"Brown"
+			},
+			{
+				"The Angel Islington",
+				"Light Blue"
+			},
+			{
+				"Euston Road",
+				"Light Blue"
+			},
+			{
+				"Pentonville Road",
+				"Light Blue"
+			},
+			{
+				"Pall Mall",
+				"Pink"
+			},
+			{
+				"Whitehall",
+				"Pink"
+			},
+			{
+				"Northumberland Avenue",
+				"Pink"
+			},
+			{
+				"Bow Street",
+				"Orange"
+			},
+			{
+				"Marlborough Street",
+				"Orange"
+			},
+			{
+				"Vine Street",
+				"Orange"
+			},
+			{
+				"The Strand",
+				"Red"
+			},
+			{
+				"Fleet Street",
+				"Red"
+			},
+			{
+				"Trafalgar Square",
+				"Red"
+			},
+			{
+				"Leicester Square",
+				"Yellow"
+			},
+			{
+				"Coventry Street",
+				"Yellow"
+			},
+			{
+				"Piccadilly",
+				"Yellow"
+			},
+			{
+				"Regent Street",
+				"Green"
+			},
+			{
+				"Oxford Street",
+				"Green"
+			},
+			{
+				"Bond Street",
+				"Green"
+			},
+			{
+				"Park Lane",
+				"Dark Blue"
+			},
+			{
+				"Mayfair",
+				"Dark Blue"
+			},
+			{
+				"King's Cross",
+				"Station"
+			},
+			{
+				"Marylebone",
+				"Station"
+			},
+			{
+				"Fenchurch St",
+				"Station"
+			},
+			{
+				"Liverpool Street",
+				"Station"
+			}
+		};
+		
+		string[] hashkeys =
+		{
+			"Old Kent Road",
+			"Whitechapel Road",
+			"The Angel Islington",
+			"Euston Road",
+			"Pentonville Road",
+			"Pall Mall",
+			"Whitehall",
+			"Northumberland Avenue",
+			"Bow Street",
+			"Marlborough Street",
+			"Vine Street",
+			"The Strand",
+			"Fleet Street",
+			"Trafalgar Square",
+			"Leicester Square",
+			"Coventry Street",
+			"Piccadilly",
+			"Regent Street",
+			"Oxford Street",
+			"Bond Street",
+			"Park Lane",
+			"Mayfair",
+			"King's Cross",
+			"Marylebone",
+			"Fenchurch St",
+			"Liverpool Street" 
+		};
+		
+		// Rounds
+		bool input = false;
+		
+		while(!input) {
+			Console.Write("Enter Rounds: ");
+			rounds = Convert.ToInt32(Console.ReadLine());
+			if(rounds>0 && rounds<=26) {
+				input = true;
+			}
+		}
+		
+		Console.WriteLine("\n");
+		
+		// Quiz
+		for(int a=0; a<rounds; a++) {
+			
+			Random rnd = new Random();
+			int i = rnd.Next(1,26);
+			
+			answer = locationHash[hashkeys[i]].ToString();
+			
+			Console.Write($"Colour/Type of {hashkeys[i]} (ANS = {locationHash[hashkeys[i]]}): ");
+			guess = Console.ReadLine();
+			
+			if(guess == answer) {
+				Console.WriteLine("Correct! +2");
+				score = score+2;
+			}
+			else {
+				Console.WriteLine("Incorrect! -1");
+				score = score-1;
+			}
+			
+			if(score<0) {
+				score = 0;
+			};	
+			
+			Console.WriteLine("\n");
+		}	
+		
+		Console.WriteLine($"Rounds = {rounds}");
+		Console.WriteLine($"Score = {score}/{rounds*2}");	
+		
+	}
+}
