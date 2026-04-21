@@ -1,0 +1,63 @@
+using System;
+				
+public class Program
+{
+	
+	static Random random = new Random();
+
+	public static void Main()
+	{
+		string shuffleWord, ans;
+		int score = 0;
+		
+		Console.WriteLine("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		Console.WriteLine("A                        Z");
+		Console.WriteLine("A    Word Unscramble     Z");
+		Console.WriteLine("A     Input, Output      Z");
+		Console.WriteLine("A   & Storage Devices    Z");
+		Console.WriteLine("A                        Z");
+		Console.WriteLine("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		Console.WriteLine();
+    
+    	
+		string[] devices = {"mouse", "keyboard", "monitor", "printer", "hardrive", "speakers"};
+
+    	foreach(string device in devices) {
+	   		
+			char[] charWord = device.ToCharArray();
+			Shuffle(charWord);
+			
+			shuffleWord = new string(charWord);
+	    
+			Console.Write($"Unsramble: {shuffleWord}: ");
+			ans = Console.ReadLine();
+			
+			if(ans == device) {
+				Console.WriteLine("Correct!");
+				score = score + 1;
+			}
+			else {
+				Console.WriteLine("Incorrect");
+			}
+			
+			Console.WriteLine("\n");
+		}
+    
+    
+    Console.WriteLine($"Score: {score}/6");
+
+} 
+		
+// Shuffle
+static void Shuffle<T>(T[] array)
+{
+	int n = array.Length;
+	for (int i = 0; i < n; i++){
+		int r = i + random.Next(n - i);
+        T t = array[r];
+        array[r] = array[i];
+        array[i] = t;
+	}
+  }
+  
+}
