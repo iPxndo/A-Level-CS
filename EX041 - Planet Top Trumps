@@ -1,0 +1,92 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		// Generate Random Number
+  		Random rand = new Random();
+  		
+		int userCard = 0;
+  		int AICard = 0;
+		int featureToCompare = -1;
+		int userScore = 0;
+		int AIScore =  0;
+		int userFeature = 0;
+    	int AIfeature = 0;
+		string winner;
+		
+    	// 0-Planet, 1-Distance from the Sun, 2-Size, 3-Orbital Period, 4-Number of Moons
+    	string[,] planets = {
+		   	{"Mercury","58","4879","88","0"},
+			{"Venus","108","12104","225","0"},
+		   	{"Earth","150","12756","365","1"},
+		   	{"Mars","228","6792","687","2"},
+		   	{"Jupiter","779","142984","4331","67"},
+		   	{"Saturn","1434","120536","10747","62"},
+		   	{"Uranus","2873","51118","30589","27"},
+		   	{"Neptune","4495","49528","59800","14"},
+		   	{"Pluto","5906","2370","90560","5"}
+		};
+			
+		while (true){
+			
+			// UserCard Generator
+			userCard = rand.Next(0,9);
+			
+			// UserCard
+			Console.WriteLine("User Card");
+			Console.WriteLine("---> Planet: " + planets[userCard,0]);
+			Console.WriteLine("---> Distance from the Sun: " + planets[userCard,1] + " million km");
+			Console.WriteLine("---> Diameter: " + planets[userCard,2] + " km");
+			Console.WriteLine("---> Orbital Period: " + planets[userCard,3] + " days");
+			Console.WriteLine("---> Number of Moons: " + planets[userCard,4]);
+	    
+	    	
+			//AI Card Generator
+	    	AICard = rand.Next(0,9);
+			
+			// Criteria
+			Console.WriteLine("\nWhich criteria do you want to compare?\n1-Distance from the sun\n2-Size\n3-Orbital Period\n4-Number of Moons");
+	  		featureToCompare = Convert.ToInt32(Console.ReadLine());
+			
+			// Features
+			userFeature = int.Parse(planets[userCard,featureToCompare]);
+			AIfeature = int.Parse(planets[AICard,featureToCompare]);
+			
+			// Logic for Awarding Points | Win = 3pts (User) | Draw = 1pts (User/AI) | Lose = 1pts (AI)
+			if(userFeature > AIfeature){
+	    		Console.WriteLine("User : " + userFeature +" | AI : " + AIfeature + " = Win");
+	    		userScore += 3;
+	    	}
+	    	
+			else if(userFeature == AIfeature){
+				Console.WriteLine("User : " + userFeature +" | AI : " + AIfeature + " = Draw");	
+				userScore += 1;
+				AIScore += 1;
+			}
+	    	else {
+				Console.WriteLine("User : " + userFeature +" | AI : " + AIfeature + " = Lose");
+				AIScore += 1;
+			}
+			
+	    	Console.WriteLine($"Score: User({userScore}) | AI({AIScore})");
+			
+			Console.WriteLine("\n=======================================================================\n");
+			
+			//Check if a winner, output who the winner was, and break out of the loop		
+			if(userScore >= 10 ) {
+				winner = "User";
+				break;
+			}
+			if(AIScore >= 10) {
+				winner = "AI";
+				break;
+			}
+				
+		}
+		
+		Console.WriteLine($"Winner = {winner}");
+		
+  	}
+}
