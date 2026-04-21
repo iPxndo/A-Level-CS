@@ -1,0 +1,96 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int currentFuelLevel = 10;
+		int tankCapacity = 55;
+		double unleadedPrice = 1.17;
+		double superUnleadedPrice = 1.27;
+		double dieselPrice = 1.21;
+		double dieselPremiumPrice = 1.34;
+		double pricePerLitre = 0;
+		string fuelChoice = "";
+		string fillTank = "";
+		double quantityNeeded = 0;
+		double cost = 0;
+		bool valid = false;
+		bool valid2 = false;
+		
+		Console.WriteLine($"You have {currentFuelLevel} litres left in your tank \n"); 
+		
+		Console.WriteLine($"A - Unleaded: £{unleadedPrice} per litre");
+		Console.WriteLine($"B - Super Unleaded: £{superUnleadedPrice} per litre");
+		Console.WriteLine($"C - Diesel: £{dieselPrice} per litre");
+		Console.WriteLine($"D - Diesel Premium: £{dieselPremiumPrice} per litre \n");
+		
+	  	// Fuel Choice
+		do
+		{
+			Console.Write("Fuel Choice: ");
+			fuelChoice = Console.ReadLine();
+			if(fuelChoice.ToUpper() == "A")
+			{
+				pricePerLitre = unleadedPrice;
+				valid = true;	
+			}
+			else if(fuelChoice.ToUpper() == "B")
+			{
+				pricePerLitre = superUnleadedPrice;
+				valid = true;	
+			}
+			else if(fuelChoice.ToUpper() == "C")
+			{
+				pricePerLitre = dieselPrice;
+				valid = true;	
+			}
+			else if(fuelChoice.ToUpper() == "D")
+			{
+				pricePerLitre = dieselPremiumPrice;
+				valid = true;	
+			}
+			else {
+				valid = false;
+			}
+		} 
+		while(valid != true);
+		
+	
+		// Fuel Amount
+		do
+		{
+			Console.Write($"Fill tank (Y/N): ");
+			fillTank = Console.ReadLine();
+			
+			if(fillTank.ToUpper() == "Y")
+			{
+				quantityNeeded = tankCapacity-currentFuelLevel;
+				valid2 = true;
+			}
+			
+			
+			else if(fillTank.ToUpper() == "N")
+			{
+				Console.Write("Litres Needed: ");
+					quantityNeeded = Convert.ToDouble(Console.ReadLine());
+					if(currentFuelLevel+quantityNeeded > tankCapacity) {
+						quantityNeeded = tankCapacity-currentFuelLevel;
+					}
+					valid2 = true;
+			}
+			else {
+				valid2 = false;
+			}
+				
+		} 
+		while(valid2 != true);
+		
+		cost = pricePerLitre * quantityNeeded;
+		
+		Console.WriteLine();
+		Console.WriteLine($"Fuel Choice: {fuelChoice}");
+		Console.WriteLine($"Quantity: {quantityNeeded} litres");
+		Console.WriteLine($"Total Cost: £{cost.ToString("#.00")}");
+	}
+}
