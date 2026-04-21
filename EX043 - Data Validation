@@ -1,0 +1,74 @@
+using System;
+using System.Text.RegularExpressions;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string firstname = "", lastname = "", depCode = "", arrCode = "", gateNo = "", flightNo = "", depTime = "", arrTime = "";
+  	
+  		Console.WriteLine(">->->->->->->->->->->->->->->->->->");
+		Console.WriteLine(">                                 >");
+		Console.WriteLine(">    BOARDING PASS VALIDATION     >");
+		Console.WriteLine(">                                 >");
+		Console.WriteLine(">->->->->->->->->->->->->->->->->->");
+		Console.WriteLine("");
+    
+    	// First Name
+		do{
+			Console.WriteLine("1.Please enter the First Name of the Passenger:");
+			firstname = Console.ReadLine();
+		} while(firstname.Length == 0);
+		
+		// Last Name
+		do{
+			Console.WriteLine("2. Please enter the Last Name of the Passenger:");
+			lastname = Console.ReadLine();
+		} while(lastname.Length == 0);
+		
+		// Departure Airport
+		do{
+			Console.WriteLine("3. Please enter the Departure Airport code:");
+			depCode = Console.ReadLine().ToUpper();
+		} while(depCode.Length != 3);
+		
+		// Arrival Airport
+		do{
+			Console.WriteLine("4. Please enter the Arrival airport code:");
+			arrCode = Console.ReadLine().ToUpper();
+		} while(arrCode.Length != 3);
+		
+		// Gate Number
+		Match gateNoMatch;
+		do{
+			Console.WriteLine("5. Please enter the Gate Number:");
+    		gateNo = Console.ReadLine();
+			gateNoMatch = Regex.Match(gateNo, @"[A-Z][0-9]{2}");
+		} while(gateNoMatch.Success == false);
+			
+		// Flight Number
+		Match flightNoMatch;
+    	do{
+    		Console.WriteLine("6. Please enter the Flight Number:");
+    		flightNo = Console.ReadLine();
+    		flightNoMatch = Regex.Match(flightNo, @"[A-Z]\d\d\d\d");
+    	} while(flightNoMatch.Success == false);
+
+   		// Depature Time
+		Match depTimeMatch;
+   		do{
+    		Console.WriteLine("7. Please enter the Departure Time:");
+    		depTime = Console.ReadLine();
+    		depTimeMatch = Regex.Match(depTime, @"^[0-3][0-9]\/[0-1][0-9]\/20[0-2][0-9]\s[0-2][0-9]:[0-5][0-9]");
+		} while(depTimeMatch.Success == false);
+		
+		// Arrival Time
+		Match arrTimeMatch;
+   		do{
+    		Console.WriteLine("8. Please enter the Arrival Time:");
+    		arrTime = Console.ReadLine();
+    		arrTimeMatch = Regex.Match(arrTime, @"^[0-3][0-9]\/[0-1][0-9]\/20[0-2][0-9]\s[0-2][0-9]:[0-5][0-9]");
+		} while(arrTimeMatch.Success == false);
+    
+  	}
+}
