@@ -1,0 +1,32 @@
+using System; 
+using System.Collections; 
+
+public class Program 
+{ 
+	public static void Main() 
+	{ 
+		//Create a new stack 
+		Stack myStack = new Stack(); 
+		
+		//Add items to the stack 
+		myStack.Push(1); 
+		myStack.Push(11);
+		myStack.Push(22);
+		myStack.Push(22);
+		myStack.Push(4);
+		myStack.Push(45);
+		myStack.Push(22);
+		myStack.Push(2);
+		myStack.Push(99);
+		
+		//Output the contents of the stack 
+		foreach (var item in myStack) 
+		{ 
+			Console.WriteLine(item);
+			Console.WriteLine("\n");
+		} 
+		
+		//Count the items in the queue 
+		Console.WriteLine($"Number of elements in Stack: {myStack.Count}"); 
+	} 
+}
