@@ -1,0 +1,167 @@
+using System;
+using System.Collections;
+
+public class Program
+{
+	public static void Main()
+	{ 
+		
+		// Code works on https://www.onlinegdb.com/online_csharp_compiler however on .NET Fiddle Every Input causes the RandInts to regenerate
+		
+		string guess,answer;
+		int score = 0;
+		
+		Hashtable elementHash = new Hashtable()
+		{
+			{ "Ac", "Actinium" },
+            { "Ag", "Silver" },
+            { "Al", "Aluminum" },
+            { "Am", "Americium" },
+            { "Ar", "Argon" },
+            { "As", "Arsenic" },
+            { "At", "Astatine" },
+            { "Au", "Gold" },
+            { "B", "Boron" },
+            { "Ba", "Barium" },
+            { "Be", "Beryllium" },
+            { "Bh", "Bohrium" },
+            { "Bi", "Bismuth" },
+            { "Bk", "Berkelium" },
+            { "Br", "Bromine" },
+            { "C", "Carbon" },
+            { "Ca", "Calcium" },
+            { "Cd", "Cadmium" },
+            { "Ce", "Cerium" },
+            { "Cf", "Californium" },
+            { "Cl", "Chlorine" },
+            { "Cm", "Curium" },
+            { "Cn", "Copernicium" },
+            { "Co", "Cobalt" },
+            { "Cr", "Chromium" },
+            { "Cs", "Cesium" },
+            { "Cu", "Copper" },
+            { "Db", "Dubnium" },
+            { "Ds", "Darmstadtium" },
+            { "Dy", "Dysprosium" },
+            { "Er", "Erbium" },
+            { "Es", "Einsteinium" },
+            { "Eu", "Europium" },
+            { "F", "Fluorine" },
+            { "Fe", "Iron" },
+            { "Fl", "Flerovium" },
+            { "Fm", "Fermium" },
+            { "Fr", "Francium" },
+            { "Ga", "Gallium" },
+            { "Gd", "Gadolinium" },
+            { "Ge", "Germanium" },
+            { "H", "Hydrogen" },
+            { "He", "Helium" },
+            { "Hf", "Hafnium" },
+            { "Hg", "Mercury" },
+            { "Ho", "Holmium" },
+            { "Hs", "Hassium" },
+            { "I", "Iodine" },
+            { "In", "Indium" },
+            { "Ir", "Iridium" },
+            { "K", "Potassium" },
+            { "Kr", "Krypton" },
+            { "La", "Lanthanum" },
+            { "Li", "Lithium" },
+            { "Lr", "Lawrencium" },
+            { "Lu", "Lutetium" },
+            { "Lv", "Livermorium" },
+            { "Mc", "Moscovium" },
+            { "Md", "Mendelevium" },
+            { "Mg", "Magnesium" },
+            { "Mn", "Manganese" },
+            { "Mo", "Molybdenum" },
+            { "Mt", "Meitnerium" },
+            { "N", "Nitrogen" },
+            { "Na", "Sodium" },
+            { "Nb", "Niobium" },
+            { "Nd", "Neodymium" },
+            { "Ne", "Neon" },
+            { "Nh", "Nihonium" },
+            { "Ni", "Nickel" },
+            { "No", "Nobelium" },
+            { "Np", "Neptunium" },
+            { "O", "Oxygen" },
+            { "Og", "Oganesson" },
+            { "Os", "Osmium" },
+            { "P", "Phosphorus" },
+            { "Pa", "Protactinium" },
+            { "Pb", "Lead" },
+            { "Pd", "Palladium" },
+            { "Pm", "Promethium" },
+            { "Po", "Polonium" },
+            { "Pr", "Praseodymium" },
+            { "Pt", "Platinum" },
+            { "Pu", "Plutonium" },
+            { "Ra", "Radium" },
+            { "Rb", "Rubidium" },
+            { "Re", "Rhenium" },
+            { "Rf", "Rutherfordium" },
+            { "Rg", "Roentgenium" },
+            { "Rh", "Rhodium" },
+            { "Rn", "Radon" },
+            { "Ru", "Ruthenium" },
+            { "S", "Sulfur" },
+            { "Sb", "Antimony" },
+            { "Sc", "Scandium" },
+            { "Se", "Selenium" },
+            { "Sg", "Seaborgium" },
+            { "Si", "Silicon" },
+            { "Sm", "Samarium" },
+            { "Sn", "Tin" },
+            { "Sr", "Strontium" },
+            { "Ta", "Tantalum" },
+            { "Tb", "Terbium" },
+            { "Tc", "Technetium" },
+            { "Te", "Tellurium" },
+            { "Th", "Thorium" },
+            { "Ti", "Titanium" },
+            { "Tl", "Thallium" },
+            { "Tm", "Thulium" },
+            { "Ts", "Tennessine" },
+            { "U", "Uranium" },
+            { "V", "Vanadium" },
+            { "W", "Tungsten" },
+            { "Xe", "Xenon" },
+            { "Y", "Yttrium" },
+            { "Yb", "Ytterbium" },
+            { "Zn", "Zinc" },
+            { "Zr", "Zirconium" }
+		};
+		
+		string[] hashKeys = { "Ac","Ar","Be","C","Cl","Cs","Er","Fl","Ge","Ho","K","Lu","Mg","N","Nh","Og","Pd","Pt","Rf","Ru","Sg","Ta","Ti","V","Zn","Ag","As","Bh","Ca","Cm", "Cu","Es","Fm","H","Hs","Kr","Lv","Mn","Na","Ni","Os","Pm","Pu","Rg","S","Si", "Tb","Tl","W","Zr","Al","At","Bi","Cd","Cn","Db","Eu","Fr","He","I","La","Mc", "Mo","Nb","No","P","Po","Ra","Rh","Sb","Sm","Tc","Tm","Xe","Am","Au","Bk","Ce", "Co","Ds","F","Ga","Hf","In","Li","Md","Mt","Nd","Np","Pa","Pr","Rb","Rn","Sc", "Sn","Te","Ts","Y","B","Br","Cf","Cr","Dy","Fe","Gd","Hg","Ir","Lr","Ba","Ne", "O","Pb","Re","Se","Sr","Th","U","Yb" }; 
+		
+		for(int a=0; a<5; a++) {
+			
+			Random rnd = new Random();
+			int i = rnd.Next(1,118);
+			
+			answer = elementHash[hashKeys[i]].ToString();
+			
+			Console.Write($"Element {hashKeys[i]} {elementHash[hashKeys[i]]}: ");
+			guess = Console.ReadLine();
+			
+			if(guess == answer) {
+				Console.WriteLine("Correct! +2");
+				score = score+2;
+			}
+			else {
+				Console.WriteLine("Incorrect! -1");
+				score = score-1;
+			}
+			
+			if(score<0) {
+				score = 0;
+			};	
+			
+			Console.WriteLine("\n");
+		}			
+		
+		Console.WriteLine($"Score: {score}/10");
+		
+	} 
+}
