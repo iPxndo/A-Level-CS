@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+	public static void Main()
+	{
+		// Test String: DJ DK C QLXDWI WF SDGDU PCX. XLRLU KQCSLKBDQK, KJXDHDET FXWZ C BDIILE RCKL,BCGL PWE JBLDX FDXKJ GDSJWXO CTCDEKJ JBL LGDU TCUCSJDS LZQDXL. IYXDET JBL RCJJUL, XLRLU KQDLK ZCECTLI JW KJLCU KLSXLJ QUCEK JW JBL LZQDXL’K YUJDZCJL PLCQWE,JBL ILCJB KJCX, CE CXZWXLI KQCSL KJCJDWE PDJB LEWYTB QWPLX JW ILKJXWO CE LEJDXL QUCELJ. QYXKYLI RO JBL LZQDXL’K KDEDKJLX CTLEJK, QXDESLKK ULDC XCSLK BWZL CRWCXIBLX KJCXKBDQ, SYKJWIDCE WF JBL KJWULE QUCEK JBCJ SCE KCGL BLX QLWQUL CEI XLKJWXL FXLLIWZ JW JBL TCUCVO...
+		
+		double percentage;
+		
+		Console.WriteLine("Enter the string:");
+		string ciphertext = Console.ReadLine();
+		
+		ciphertext = ciphertext.Replace(" ", string.Empty);
+		
+		Dictionary<char, double> frequency = new Dictionary<char, double>();
+		
+		foreach (var j in ciphertext) {
+			try {
+				frequency.Add(j, 1);
+			}
+			catch {
+				frequency[j] += 1;
+			}
+		}
+
+		Console.WriteLine();
+		
+		foreach (var k in frequency) {
+			percentage = (k.Value / ciphertext.Length) * 100;
+			Console.WriteLine($"{k.Key} = {k.Value} : {Math.Round(percentage, 2)}%");
+		}
+
+		Console.WriteLine();
+		Console.WriteLine($"Sting Length = {ciphertext.Length}");
+	}
+}
