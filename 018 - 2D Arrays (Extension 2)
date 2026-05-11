@@ -1,1 +1,42 @@
-018 - 2D Arrays (Extension 2)
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int green=0,purple=0,blue=0;
+		
+		string[,] jediCouncil = { 
+			{"Yoda","Green"}, 
+			{"Even Piell","Green"}, 
+			{"Saesee Tiin","Green"}, 
+			{"Mace Windu","Purple"}, 
+			{"Plo Koon","Blue"}, 
+			{"Oppo Rancisis","Green"}, 
+			{"Ki Adi Mundi","Blue"} 
+		};
+		
+		for (int counter = 0; counter<7; counter++)
+		{
+			if(jediCouncil[counter,1] == "Green") 
+			{
+				green = green+1;
+			}
+			
+			if(jediCouncil[counter,1] == "Purple") 
+			{
+				purple = purple+1;
+			}
+			
+			if(jediCouncil[counter,1] == "Blue") 
+			{
+				blue = blue+1;
+			}
+		}
+		
+		Console.Write($"Green = {green} \nPurple = {purple} \nBlue = {blue}");
+					   
+					  
+			
+	}
+}
