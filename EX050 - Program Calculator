@@ -1,0 +1,60 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double width,height,radius,area=-1;
+		
+		Console.Write("Enter Shape: ");
+		string shape = Console.ReadLine().ToLower();
+		
+		//Square
+		if(shape == "square")
+		{
+			Console.Write("Enter Width: ");
+			width = Convert.ToDouble(Console.ReadLine());
+			area = width*width;
+		}
+		
+		//Rectangle
+		else if(shape == "rectangle")
+		{
+			Console.Write("Enter Width: ");
+			width = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Enter Height: ");
+			height = Convert.ToDouble(Console.ReadLine());
+			area = width*height;
+		}
+		
+		//Circle
+		else if(shape == "circle")
+		{
+			Console.Write("Enter Radius: ");
+			radius = Convert.ToDouble(Console.ReadLine());
+			area = radius*radius*3.14;
+		}
+		
+		//Triangle
+		else if(shape == "triangle")
+		{
+			Console.Write("Enter Width: ");
+			width = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Enter Height: ");
+			height = Convert.ToDouble(Console.ReadLine());
+			area = (width*height)/2;
+		}
+		
+		//Error
+		else
+		{
+			Console.WriteLine("\nInvalid Input!");
+		}
+		
+		//Correct Inputs
+		if(area > 0)
+		{
+			Console.WriteLine($"\n{Math.Round(area,3)} units²");
+		}
+	}
+}
