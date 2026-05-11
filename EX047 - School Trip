@@ -1,0 +1,35 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int students,teachers,total,largeBus,smallBus,remaining,cost;
+		
+		Console.Write("Enter Number of Students: ");
+		students = Convert.ToInt32(Console.ReadLine());
+		
+		Console.Write("Enter Number of Teachers: ");
+		teachers = Convert.ToInt32(Console.ReadLine());
+		
+		total = students+teachers;
+		
+		largeBus = total/46;
+		remaining = total%46;
+		
+		smallBus = remaining/16;
+		remaining = remaining%16;
+		
+		if(remaining>0) {
+			smallBus +=1;
+		}
+		
+		cost = (largeBus*360) + (smallBus*140);
+		
+		Console.WriteLine();
+		Console.WriteLine($"Large Buses: {largeBus}");
+		Console.WriteLine($"Small Buses: {smallBus}");
+		Console.WriteLine($"Cost: £{cost}");
+		
+	}
+}
