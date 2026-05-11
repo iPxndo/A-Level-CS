@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double sizeK,sizeM,sizeG;
+		
+		Console.WriteLine("Enter Pixels: ");
+		int pixels = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Enter Frames: ");
+		int fps = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Enter Minutes: ");
+		int length = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine();
+		
+		sizeK = pixels*fps*length*0.0013;
+		
+		sizeM = sizeK/1000;
+		
+		if(sizeM>1000) {
+			sizeG = sizeM/1000;
+			Console.WriteLine($"{Math.Round(sizeG, 2)} GB");
+		}
+		else {
+			Console.WriteLine($"{Math.Round(sizeM, 2)} MB");
+		}
+		
+	}
+}
