@@ -1,0 +1,18 @@
+using System;
+
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		Circle c1 = new Circle(1.1);
+		Console.WriteLine(c1.toString());
+		Circle c2 = new Circle();
+		Console.WriteLine(c2.toString());
+		
+		c1.setRadius(2.2);
+		Console.WriteLine(c1.toString());
+		Console.WriteLine($"Radius is {c1.getRadius()}");
+		Console.WriteLine($"Area is {Math.Round(c1.getArea(),2)}");
+		Console.WriteLine($"Circumference is {Math.Round(c1.getCircumference(),2)}");
+	}
+}
