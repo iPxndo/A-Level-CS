@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		double a,b,c;
+		
+		Console.Write("Enter Side a: ");
+		a = Convert.ToDouble(Console.ReadLine());
+		
+		Console.Write("Enter Side b: ");
+		b = Convert.ToDouble(Console.ReadLine());
+		
+		Console.Write("Enter Side c: ");
+		c = Convert.ToDouble(Console.ReadLine());
+	 	
+	  	double answer = getTriangleArea(a,b,c);
+  		
+		Console.WriteLine();
+		Console.WriteLine($"AREA = {Math.Round(answer,5)}");
+	}
+
+	static double getTriangleArea(double a, double b, double c){
+  		double s = (a+b+c)/2;
+	  	double area = Math.Sqrt(s*(s-a)*(s-b)*(s-c));
+		return area;
+  	}
+}
