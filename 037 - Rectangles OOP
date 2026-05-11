@@ -1,0 +1,21 @@
+using System;
+					
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		Rectangle r1 = new Rectangle(1.2f, 3.4f);
+		Console.WriteLine(r1.toString());
+		Rectangle r2 = new Rectangle();
+		Console.WriteLine(r2.toString());
+		
+		r1.setLength(5.6f);
+		r1.setWidth(7.8f);
+		Console.WriteLine(r1.toString());
+		Console.WriteLine($"Length is: {Math.Round(r1.getLength(),2)}");
+		Console.WriteLine($"Width is: {Math.Round(r1.getWidth(),2)}");
+		
+		Console.WriteLine($"Area is: {Math.Round(r1.getArea(),2)}");
+		Console.WriteLine($"Perimeter is: {Math.Round(r1.getPerimeter(),2)}");
+	}
+}
