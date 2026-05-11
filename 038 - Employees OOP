@@ -1,0 +1,24 @@
+using System;
+					
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		Employee e1 = new Employee(8, "Peter", "Tan", 2500);
+		Console.WriteLine(e1.toString());
+		
+		e1.setSalary(999);
+		Console.WriteLine(e1.toString());
+		Console.WriteLine($"id is: {e1.getID()}");
+		Console.WriteLine($"first ame is: {e1.getFname()}");
+		Console.WriteLine($"lastname is: {e1.getLname()}");
+		Console.WriteLine($"salary is: {e1.getSalary()}");
+		
+		Console.WriteLine($"name is: {e1.getName()}");
+		Console.WriteLine($"annual salary is: {e1.getannualSalary()}");
+		
+		e1.raiseSalary(99);
+		Console.WriteLine(e1.getSalary());
+		Console.WriteLine(e1.toString());
+	}
+}
