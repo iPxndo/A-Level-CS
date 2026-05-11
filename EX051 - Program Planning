@@ -1,0 +1,45 @@
+using System;
+using System.Linq;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string input1="",input2="";
+		int[] mantissa;
+		int exponent;
+		double total=0;
+		mantissa = new int[5];
+
+		do
+		{
+			Console.Write("Enter Mantissa: ");
+			input1 = Console.ReadLine();
+		} while(input1.Length != 5);
+		
+		do
+		{
+			Console.Write("Enter Exponent: ");
+			input2 = Console.ReadLine();
+		} while(input2.Length != 3);
+		
+		// Mantissa to Int Array
+		mantissa = input1.ToCharArray().Select(c => c - '0').ToArray();
+		
+		// Exponent to Decimal
+		exponent = Convert.ToInt32(input2, 2);
+		
+		double a = Math.Pow(2, exponent);
+		
+		foreach(int k in mantissa)
+		{
+			if(k == 1)
+			{
+				total += a;
+			}
+			a /= 2;
+		}
+		
+		Console.WriteLine($"\nBINARY = {input1} {input2} | Decimal = {total}");
+	}
+}
