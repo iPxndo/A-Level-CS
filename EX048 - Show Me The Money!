@@ -1,0 +1,99 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		decimal toPay,recieved,changePounds,twentyPounds=0,tenPounds=0,fivePounds=0,twoPounds=0,onePound=0,fiftyPence=0,twentyPence=0,tenPence=0,fivePence=0,twoPence=0,onePence=0;
+		int change;
+		
+		Console.Write("Amount to Pay: ");
+		toPay = Convert.ToDecimal(Console.ReadLine());
+		
+		Console.Write("Amount Recieved: ");
+		recieved = Convert.ToDecimal(Console.ReadLine());
+		
+		if(toPay == recieved) {
+			Console.WriteLine("No Change Required");
+		}
+		if(toPay > recieved) {
+			Console.WriteLine("Not Enough Paid! Please Try Again");	
+		}
+		changePounds = recieved-toPay;
+		change = (int)(changePounds*100); // Change from Pounds(£) to Pence(p)
+			
+		Console.WriteLine();
+		Console.WriteLine($"***** CHANGE *****");
+			
+		do {
+			// £20
+			if(change / 2000 > 0) {
+				twentyPounds = change/2000;
+				change -= (int)(twentyPounds*2000);
+			}
+			// £10
+			else if(change / 1000 > 0) {
+				tenPounds = change/1000;
+				change -= (int)(tenPounds*1000);
+			}
+			// £5
+			else if(change / 500 > 0) {
+				fivePounds = change/500;
+				change -= (int)(fivePounds*500);
+			}
+			// £2
+			else if(change / 200 > 0) {
+				twoPounds = change/200;
+				change -= (int)(twoPounds*200);
+			}
+			// £1
+			else if(change / 100 > 0) {
+				onePound = change/100;
+				change -= (int)(onePound*100);
+			}
+			// £0.50
+			else if(change / 50 > 0) {
+				fiftyPence = change/50;
+				change -= (int)(fiftyPence*50);
+			}
+			// £0.20
+			else if(change / 20 > 0) {
+				twentyPence = change/20;
+				change -= (int)(twentyPence*20);
+			}
+			// £0.10
+			else if(change / 10 > 0) {
+				tenPence = change/10;
+				change -= (int)(tenPence*10);
+			}
+			// £0.05
+			else if(change / 5 > 0) {
+				fivePence = change/5;
+				change -= (int)(fivePence*5);
+			}
+			// £0.02
+			else if(change / 2 > 0) {
+				twoPence = change/2;
+				change -= (int)(twoPence*2);
+			}
+			// £0.01
+			else {
+				onePence = change/1;
+				change -= (int)(onePence*1);
+			}
+			
+		} while(change > 0);
+		
+		Console.WriteLine($"{twentyPounds} x £20");
+		Console.WriteLine($"{tenPounds} x £10");
+		Console.WriteLine($"{fivePounds} x £5");
+		Console.WriteLine($"{twoPounds} x £2");
+		Console.WriteLine($"{onePound} x £1");
+		Console.WriteLine($"{fiftyPence} x 50p");
+		Console.WriteLine($"{twentyPence} x 20p");
+		Console.WriteLine($"{tenPence} x 10p");
+		Console.WriteLine($"{fivePence} x 5p");
+		Console.WriteLine($"{twoPence} x 2p");
+		Console.WriteLine($"{onePence} x 1p");
+	}
+}
