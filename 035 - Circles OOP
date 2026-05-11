@@ -1,0 +1,25 @@
+using System;
+					
+class MainClass
+{
+	public static void Main(string[] args)
+	{
+		Circle c1 = new Circle(1);
+		Circle c2 = new Circle(2.0);
+		Circle c3 = new Circle(3,"blue");
+		
+		Console.WriteLine($"The Circle has a {c1.getRadius()} and an area of {c1.getArea()}");
+		Console.WriteLine($"The Circle has a {c2.getRadius()} and an area of {c2.getArea()}");
+		Console.WriteLine($"The Circle has a {c3.getRadius()} and an area of {c3.getArea()}");
+		
+		Circle c4 = new Circle();
+		c4.setRadius(5.5);
+		Console.WriteLine($"Radius is {c4.getRadius()}");
+		c4.setColor("green");
+		Console.WriteLine($"Radius is {c4.getColor()}");
+		
+		Circle c5 = new Circle(5.5);
+		Console.WriteLine(c5.toString());
+	}
+}
+
