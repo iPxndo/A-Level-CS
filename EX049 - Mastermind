@@ -1,0 +1,105 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		// Code works on https://www.onlinegdb.com/online_csharp_compiler however on .NET Fiddle Every Input causes the RandInts to regenerate
+		
+		Random rnd = new Random();
+		
+		string[] colors = {"white","black","red","yellow","green","blue"};
+		string comp1,comp2,comp3,comp4,user1,user2,user3,user4;
+		int CorrectPegs=0,WrongPegs=0;
+		
+		comp1 = colors[rnd.Next(0,6)];
+		comp2 = colors[rnd.Next(0,6)];
+		comp3 = colors[rnd.Next(0,6)];
+		comp4 = colors[rnd.Next(0,6)];
+		
+		Console.Write("Colors: [White, Black, Red, Yellow, Green, Blue]");
+		Console.WriteLine("\n------------------------------------------------"+comp1+comp2+comp3+comp4);
+		Console.WriteLine();
+		
+		for(int n=0; n<=10; n++)
+		{
+			Console.Write("First Color: ");
+			user1 = Console.ReadLine().ToLower();
+			Console.Write("Second Color: ");
+			user2 = Console.ReadLine().ToLower();
+			Console.Write("Third Color: ");
+			user3 = Console.ReadLine().ToLower();
+			Console.Write("Fourth Color: ");
+			user4 = Console.ReadLine().ToLower();
+			//Peg 1
+			if(user1 == comp1)
+			{
+				CorrectPegs +=1;
+			}
+			else
+			{
+				if(user1 == comp2 || user1 == comp3 || user1 == comp4)
+				{
+					WrongPegs +=1;
+				}
+			}
+			//Peg 2
+			if(user2 == comp2)
+			{
+				CorrectPegs +=1;
+			}
+			else
+			{
+				if(user1 == comp1 || user1 == comp3 || user1 == comp4)
+				{
+					WrongPegs +=1;
+				}
+			}
+			//Peg 3
+			if(user3 == comp3)
+			{
+				CorrectPegs +=1;
+			}
+			else
+			{
+				if(user1 == comp1 || user1 == comp2 || user1 == comp4)
+				{
+					WrongPegs +=1;
+				}
+			}
+			//Peg 4
+			if(user4 == comp4)
+			{
+				CorrectPegs +=1;
+			}
+			else
+			{
+				if(user1 == comp1 || user1 == comp2 || user1 == comp3)
+				{
+					WrongPegs +=1;
+				}
+			}
+			
+			Console.WriteLine($"Pegs in Correct Positions: {CorrectPegs}");
+			Console.WriteLine($"Pegs in Wrong Positions: {WrongPegs}");
+			Console.WriteLine();
+			
+			if(CorrectPegs == 4)
+			{
+				break;
+			}
+			
+			CorrectPegs = 0;
+			WrongPegs = 0;
+		}
+		
+		if(CorrectPegs == 4)
+		{
+			Console.WriteLine("You Win!");
+		}
+		else
+		{
+			Console.WriteLine("Game Over!");
+		}
+	}
+}
